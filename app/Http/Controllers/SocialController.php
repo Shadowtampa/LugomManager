@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\SocialsDataTable;
 use App\Http\Requests\StoreSocialRequest;
 use App\Http\Requests\UpdateSocialRequest;
 use App\Models\Social;
@@ -11,9 +12,9 @@ class SocialController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(SocialsDataTable $dataTable)
     {
-        //
+            return $dataTable->render('socials.index');
     }
 
     /**
