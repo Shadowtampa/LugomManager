@@ -59,6 +59,7 @@ class SocialsDataTable extends DataTable
                     ->orderBy(1)
                     ->selectStyleSingle()
                     ->buttons([
+                        Button::make('add'),
                         Button::make('excel'),
                         Button::make('csv'),
                         Button::make('pdf'),
@@ -80,7 +81,8 @@ class SocialsDataTable extends DataTable
                   ->width(60)
                   ->addClass('text-center'),
             Column::make('id'),
-            Column::make('add your columns'),
+            Column::make('alias'),
+            Column::make('name'),
             Column::make('created_at'),
             Column::make('updated_at'),
         ];

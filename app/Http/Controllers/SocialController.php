@@ -22,7 +22,7 @@ class SocialController extends Controller
      */
     public function create()
     {
-        //
+        return view("socials.create");
     }
 
     /**
@@ -30,7 +30,17 @@ class SocialController extends Controller
      */
     public function store(StoreSocialRequest $request)
     {
-        //
+
+        // Adiciona o campo store_id com o valor 1 aos dados da requisição
+        $requestData = $request->all();
+        $requestData['store_id'] = 1;
+
+        // Cria o registro com os dados da requisição modificada
+        $social = Social::create($requestData);
+
+        // Redirect to a view or route after successfully storing the product
+        return redirect()->route('socials.index')->with('success', 'Social created successfully');
+
     }
 
     /**
