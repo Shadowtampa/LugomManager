@@ -22,6 +22,12 @@
                         {{ __('Socials') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('ads.index')" :active="request()->routeIs('ads.index')">
+                        {{ __('Propagandas') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
